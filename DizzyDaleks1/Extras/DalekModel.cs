@@ -13,6 +13,7 @@ namespace DizzyDaleks1.Extras
 {
 	public class DalekModel
 	{
+		private float _angle;
 		private readonly int _meshCount;
 		private readonly Model _model;
 		private readonly Texture2D _texture;
@@ -54,7 +55,10 @@ namespace DizzyDaleks1.Extras
 		public void Update(GameTime gameTime)
 		{
 			var modelAngleDelta = (float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f;
-			_world *= Matrix.CreateRotationY(modelAngleDelta);
+			_angle += modelAngleDelta;
+
+			_world = Matrix.CreateTranslation(new Vector3(0, 0, 4))
+				* Matrix.CreateRotationY(_angle);
 		}
 	}
 }
