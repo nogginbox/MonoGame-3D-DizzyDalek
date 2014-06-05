@@ -134,7 +134,7 @@
     <Content Include="Content\Slide.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\DalekMetal.jpg">
+    <Content Include="Content\DalekMetal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

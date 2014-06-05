@@ -68,7 +68,8 @@ namespace DizzyDaleks1
 
 			// Dalek
 			var model = Content.Load<Model> ("Dalek");
-			_dalek = new DalekModel (model);
+			var dalekTexture = Content.Load<Texture2D> ("DalekMetal");
+			_dalek = new DalekModel (model, dalekTexture);
 		}
 
 		protected override void Update (GameTime gameTime)

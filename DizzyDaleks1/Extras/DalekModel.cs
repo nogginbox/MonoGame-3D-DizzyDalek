@@ -15,12 +15,14 @@ namespace DizzyDaleks1.Extras
 	{
 		private readonly int _meshCount;
 		private readonly Model _model;
+		private readonly Texture2D _texture;
 		private Matrix _world;
 
-		public DalekModel(Model model)
+		public DalekModel(Model model, Texture2D texture)
 		{
 			_meshCount = model.Meshes.Count;
 			_model = model;
+			_texture = texture;
 			_world = Matrix.Identity;
 		}
 
@@ -35,6 +37,10 @@ namespace DizzyDaleks1.Extras
 				foreach (var meshEffect in _model.Meshes[i].Effects)
 				{
 					var effect = (BasicEffect)meshEffect;
+
+
+					effect.TextureEnabled = true;
+					effect.Texture = _texture;
 					effect.EnableDefaultLighting();
 
 					effect.World = transforms[_model.Meshes[i].ParentBone.Index] * _world;
