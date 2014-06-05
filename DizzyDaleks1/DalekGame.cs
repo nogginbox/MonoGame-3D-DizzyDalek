@@ -26,11 +26,11 @@ namespace DizzyDaleks1
 	{
 		GraphicsDeviceManager _graphics;
 		SpriteBatch _spriteBatch;
-		//Camera _camera;
+		Camera _camera;
 
 		// Content
 		Texture2D _dragonTexture;
-		//TexturePlane _slide;
+		TexturePlane _slide;
 		//DalekModel _dalek;
 
 		public DalekGame()
@@ -48,6 +48,10 @@ namespace DizzyDaleks1
 
 		protected override void Initialize ()
 		{
+			_camera = new Camera(new Vector3(0, 15, 15),
+				Vector3.Zero,
+				Vector3.Up,
+				Window);
 			base.Initialize ();
 		}
 
@@ -56,6 +60,10 @@ namespace DizzyDaleks1
 			_spriteBatch = new SpriteBatch (_graphics.GraphicsDevice);
 
 			_dragonTexture = Content.Load<Texture2D> ("Dragon");
+
+			var slideTexture = Content.Load<Texture2D> ("Slide");
+			var scaleSlide = Matrix.CreateScale (0.05f);
+			_slide = new TexturePlane (_graphics.GraphicsDevice, slideTexture, scaleSlide);
 		}
 
 		protected override void Update (GameTime gameTime)
@@ -71,6 +79,7 @@ namespace DizzyDaleks1
 			_spriteBatch.Draw (_dragonTexture, new Vector2 (100, 100), Color.White);
 			_spriteBatch.End ();
 
+			_slide.Draw (_camera);
 
 			base.Draw (gameTime);
 		}
