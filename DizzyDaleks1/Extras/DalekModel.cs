@@ -15,6 +15,7 @@ namespace DizzyDaleks1.Extras
 	{
 		private float _angle;
 		private readonly int _meshCount;
+		private readonly Matrix[] _meshRotations;
 		private readonly Model _model;
 		private readonly Texture2D _texture;
 		private Matrix _world;
@@ -25,6 +26,12 @@ namespace DizzyDaleks1.Extras
 			_model = model;
 			_texture = texture;
 			_world = Matrix.Identity;
+
+			_meshRotations = new Matrix[_meshCount];
+			for (var i = 0; i < _meshCount; i++)
+			{
+				_meshRotations[i] = Matrix.Identity;
+			}
 		}
 
 		public void Draw(Camera camera)
@@ -44,7 +51,7 @@ namespace DizzyDaleks1.Extras
 					effect.Texture = _texture;
 					effect.EnableDefaultLighting();
 
-					effect.World = transforms[_model.Meshes[i].ParentBone.Index] * _world;
+					effect.World =  transforms[_model.Meshes[i].ParentBone.Index] * _meshRotations[i] * _world;
 
 					camera.Display(effect);
 				}
@@ -59,6 +66,11 @@ namespace DizzyDaleks1.Extras
 
 			_world = Matrix.CreateTranslation(new Vector3(0, 0, 4))
 				* Matrix.CreateRotationY(_angle);
+
+			for (var i = 0; i < _meshCount; i++)
+			{
+				_meshRotations[i] *= Matrix.CreateRotationY(-modelAngleDelta * i);
+			}
 		}
 	}
 }
