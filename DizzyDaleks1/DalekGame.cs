@@ -48,7 +48,7 @@ namespace DizzyDaleks1
 
 		protected override void Initialize ()
 		{
-			_camera = new Camera(new Vector3(0, 15, 15),
+			_camera = new Camera(new Vector3(0, 10, 10),
 				Vector3.Zero,
 				Vector3.Up,
 				Window);
@@ -74,6 +74,7 @@ namespace DizzyDaleks1
 
 		protected override void Update (GameTime gameTime)
 		{
+			_dalek.Update (gameTime);
 			base.Update (gameTime);
 		}
 
