@@ -31,29 +31,6 @@ namespace DizzyDaleks1.Extras
 			effect.Projection = Projection;
 		}
 
-		public float CameraY
-		{
-			set
-			{
-				if (_position.Y == value) return;
-
-				_position = new Vector3(_position.X, value, _position.Z);
-				View = Matrix.CreateLookAt(_position, _positionTarget, _up);
-			}
-		}
-
-		public int CameraZ
-		{
-			set
-			{
-				if (_position.Z == value) return;
-
-				//_position.Z = value;
-				_position = new Vector3(_position.X, _position.Y, value);
-				View = Matrix.CreateLookAt(_position, _positionTarget, _up);
-			}
-		}
-
 		private void SetProjectionMatrix(Rectangle screen)
 		{
 			var screenAspect = screen.Width / (float)screen.Height;

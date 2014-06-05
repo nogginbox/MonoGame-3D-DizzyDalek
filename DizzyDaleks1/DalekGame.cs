@@ -31,7 +31,7 @@ namespace DizzyDaleks1
 		// Content
 		Texture2D _dragonTexture;
 		TexturePlane _slide;
-		//DalekModel _dalek;
+		DalekModel _dalek;
 
 		public DalekGame()
 		{
@@ -61,9 +61,14 @@ namespace DizzyDaleks1
 
 			_dragonTexture = Content.Load<Texture2D> ("Dragon");
 
+			// Slide
 			var slideTexture = Content.Load<Texture2D> ("Slide");
 			var scaleSlide = Matrix.CreateScale (0.05f);
 			_slide = new TexturePlane (_graphics.GraphicsDevice, slideTexture, scaleSlide);
+
+			// Dalek
+			var model = Content.Load<Model> ("Dalek");
+			_dalek = new DalekModel (model);
 		}
 
 		protected override void Update (GameTime gameTime)
@@ -79,18 +84,15 @@ namespace DizzyDaleks1
 			_spriteBatch.Draw (_dragonTexture, new Vector2 (100, 100), Color.White);
 			_spriteBatch.End ();
 
+			// Reset for 3D drawing
+			GraphicsDevice.SamplerStates[0] = SamplerState.LinearWrap;
+			GraphicsDevice.BlendState = BlendState.Opaque;
+			GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
 			_slide.Draw (_camera);
+			_dalek.Draw (_camera);
 
 			base.Draw (gameTime);
 		}
 	}
 }
-
-/* Useful 3D Graphics Device reset code **
-
-// Reset for 3D drawing
-GraphicsDevice.SamplerStates[0] = SamplerState.LinearWrap;
-GraphicsDevice.BlendState = BlendState.Opaque;
-GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-
- */
