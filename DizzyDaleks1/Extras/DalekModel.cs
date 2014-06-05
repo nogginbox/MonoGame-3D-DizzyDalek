@@ -45,13 +45,17 @@ namespace DizzyDaleks1.Extras
 				foreach (var meshEffect in _model.Meshes[i].Effects)
 				{
 					var effect = (BasicEffect)meshEffect;
-
-
-					effect.TextureEnabled = true;
-					effect.Texture = _texture;
 					effect.EnableDefaultLighting();
 
+					// Textures
+					effect.TextureEnabled = true;
+					effect.Texture = _texture;
+
 					effect.World =  transforms[_model.Meshes[i].ParentBone.Index] * _meshRotations[i] * _world;
+
+					// Lighting
+					effect.DirectionalLight0.Direction = new Vector3(-2,0,-1);
+					effect.DirectionalLight0.DiffuseColor = Color.Red.ToVector3 ();
 
 					camera.Display(effect);
 				}
