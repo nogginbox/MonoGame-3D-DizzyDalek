@@ -1,22 +1,32 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DizzyDaleks1", "DizzyDaleks1\DizzyDaleks1.csproj", "{08442EE9-7813-4213-801A-6AFCD2D3E4DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|iPhoneSimulator = Debug|iPhoneSimulator
-		Release|iPhoneSimulator = Release|iPhoneSimulator
-		Debug|iPhone = Debug|iPhone
-		Release|iPhone = Release|iPhone
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		Ad-Hoc|iPhoneSimulator = Ad-Hoc|iPhoneSimulator
 		AppStore|iPhone = AppStore|iPhone
+		AppStore|iPhoneSimulator = AppStore|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhoneSimulator
+		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Ad-Hoc|iPhoneSimulator.Build.0 = Ad-Hoc|iPhoneSimulator
+		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Ad-Hoc|iPhoneSimulator
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
+		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
+		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.AppStore|iPhoneSimulator.Deploy.0 = AppStore|iPhoneSimulator
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Debug|iPhone.Build.0 = Debug|iPhone
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
@@ -25,6 +35,9 @@ Global
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Release|iPhone.Build.0 = Release|iPhone
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{08442EE9-7813-4213-801A-6AFCD2D3E4DE}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = DizzyDaleks1\DizzyDaleks1.csproj

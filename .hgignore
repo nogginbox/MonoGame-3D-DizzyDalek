@@ -1,0 +1,7 @@
+syntax: glob
+DizzyDaleks1/bin/*
+DizzyDaleks1/obj/*
+*.suo
+*/Thumbs.db
+Blender Assets/*.blend1
+Blender Assets/*.blend2
